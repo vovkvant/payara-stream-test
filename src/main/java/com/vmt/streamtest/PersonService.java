@@ -3,6 +3,7 @@ package com.vmt.streamtest;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.eclipse.persistence.queries.CursoredStream;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.StreamingOutput;
@@ -12,13 +13,14 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
 
+//do i really need this annotation?
+@ApplicationScoped
 public class PersonService implements StreamingOutput {
 
     @Inject
     PersonDao personDao;
 
-    @Inject
-    private ObjectMapper objectMapper;
+    private ObjectMapper objectMapper = new ObjectMapper();
 
     public void write(OutputStream outputStream) throws WebApplicationException {
         Writer writer = new BufferedWriter(new OutputStreamWriter(outputStream));
