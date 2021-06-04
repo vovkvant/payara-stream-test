@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="BESY-NEXT-PU" transaction-type="JTA">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+        <jta-data-source>jdbc/BeSyNextPool</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+        <shared-cache-mode>NONE</shared-cache-mode>
+        <properties>
+            <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.logging.level.sql" value="FINE"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+            <property name="eclipselink.jdbc.connections.wait-timeout" value="100000000"/>
+            <property name="javax.persistence.query.timeout" value="100000000"/>
+            <property name="javax.persistence.validation.mode" value="NONE" />
+            <property name="eclipselink.jdbc.batch-writing" value="JDBC"/>
+            <property name="eclipselink.jdbc.batch-writing.size" value="1000"/>
+            <property name="eclipselink.jpa.uppercase-column-names" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
