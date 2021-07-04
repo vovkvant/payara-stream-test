@@ -30,9 +30,8 @@ public class PersonDao {
             //        .setHint("eclipselink.JDBC_FETCH_SIZE", "1")
             //        .setHint("eclipselink.cursor", "TRUE").getResultStream();
         } catch (final IllegalArgumentException | PersistenceException ex) {
-            ex.printStackTrace();
+            throw new RuntimeException(ex);
         }
-        return null;
     }
 
 }

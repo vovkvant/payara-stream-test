@@ -39,7 +39,7 @@ public class PersonService implements StreamingOutput {
             writer.write(json);
             writer.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }

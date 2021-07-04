@@ -6,6 +6,16 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * create table T_PERSON(
+ * id int PRIMARY KEY,
+ * name VARCHAR(256),
+ * lastName VARCHAR(256),
+ * firm VARCHAR(256),
+ * phoneNumber VARCHAR(256),
+ * city VARCHAR(256)
+ * );
+ */
 @Entity
 @Table(name = "T_PERSON")
 public class PersonEntity {
@@ -27,9 +37,31 @@ public class PersonEntity {
     @Column(name = "phoneNumber")
     private String phoneNumber;
 
-    @Column(name = "vehicleId")
-    private Long vehicleId;
-
     @Column(name = "city")
     private String city;
+
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getFirm() {
+        return firm;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public String getCity() {
+        return city;
+    }
 }
+
